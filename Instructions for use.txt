@@ -1,0 +1,9 @@
+In the \ultralytics-main\ultralytics\nn\tasks.py file, 685-697 is the added code for the use of NAM with ODConv.
+
+In \ultralytics-main\ultralytics\nn\modules\conv.py, lines 293-469 are the definition codes for NAM and ODConv.
+
+In \ultralytics-main\ultralytics\utils\loss.py, 69-85 is the code we modified, and we defined that NWD-LOSS was used to recalculate losses.
+
+In ultralytics-main\ultralytics\cfg\models\v8 is the structural yaml file for our model, with 26 rows for the location of the NAM additions and 43 rows for the ODConv additions.
+
+The YOLOV8 model needs to be run from a terminal, for which we have written the \ultralytics-main\RUN.py file to facilitate running. Lines 5-7 of the code are the code for model training. Lines 9-12 of the code are commented, this section is to facilitate the validation of the written code, If performing model validation, comment out 5-7 lines of code to use 9-12 lines of code. The position after model is the absolute path of the training model.pt file, result is placed in the path of the mydata.yaml file. In the training validation, just change the val after mydata.yaml to the path of the validation file. The 16th line of code in Anaconda's pytorch environment, choose their own need to configure the parameters can run. We have provided NNYOLOv8's best.pt and YOLOv8l's best.pt for easy comparison and validate, and mydata.yaml is also in this folder.
